@@ -1,0 +1,16 @@
+* {
+    box-sizing: border-box;
+}
+
+figure {
+    display: flex;
+    flex-wrap: wrap;
+
+    width: 640px;
+    height: 640px;
+}
+
+.bg-black {
+    background-color: black;
+}
+
