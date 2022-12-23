@@ -13,11 +13,18 @@ window.addEventListener(
         // Create new child with the new number
         // Change the label grid-size to match the gridSize
 
+
+        document.querySelector("#show-color-picker-btn").addEventListener(
+            "click",
+            function(e){
+                document.querySelector("#color-picker").click();
+            }
+        )
+
         document.querySelector("#color-picker").addEventListener(
             "input",
             function(e){
-                document.querySelector("#color-picker").backgroundColor = document.querySelector("#color-picker").value;
-
+                document.querySelector("#show-color-picker-btn").style.backgroundColor = document.querySelector("#color-picker").value;
             }
         );
         
@@ -25,10 +32,19 @@ window.addEventListener(
             "click",
             function(e){
                 isEraseEnabling = false;
+                document.querySelector("#erase-btn").classList.remove("btn-toggled");
+
                 isRainbowEnabling = false;
+                document.querySelector("#rainbow-mode-btn").classList.remove("btn-toggled");
+
                 isColorEnabling = true;
+                document.querySelector("#color-mode-btn").classList.add("btn-toggled");
+
                 isLightening = false;
+                document.querySelector("#toggle-lightening-btn").classList.remove("btn-toggled");
+
                 isShading = false;
+                document.querySelector("#toggle-shading-btn").classList.remove("btn-toggled");
             }
         );
 
@@ -36,10 +52,19 @@ window.addEventListener(
             "click",
             function(e){
                 isEraseEnabling = false;
+                document.querySelector("#erase-btn").classList.remove("btn-toggled");
+
                 isColorEnabling = false;
+                document.querySelector("#color-mode-btn").classList.remove("btn-toggled");
+
                 isRainbowEnabling = true;
+                document.querySelector("#rainbow-mode-btn").classList.add("btn-toggled");
+
                 isLightening = false;
+                document.querySelector("#toggle-lightening-btn").classList.remove("btn-toggled");
+
                 isShading = false;
+                document.querySelector("#toggle-shading-btn").classList.remove("btn-toggled");
             }
         );
 
@@ -47,8 +72,16 @@ window.addEventListener(
             "click",
             function(e){
                 isEraseEnabling = true;
+                document.querySelector("#erase-btn").classList.add("btn-toggled");
+
+                document.querySelector("#color-mode-btn").classList.remove("btn-toggled");
+                document.querySelector("#rainbow-mode-btn").classList.remove("btn-toggled");
+
                 isLightening = false;
+                document.querySelector("#toggle-lightening-btn").classList.remove("btn-toggled");
+
                 isShading = false;
+                document.querySelector("#toggle-shading-btn").classList.remove("btn-toggled");
             }
         );
 
@@ -56,8 +89,14 @@ window.addEventListener(
             "click",
             function(e){
                 isEraseEnabling = false;
+                document.querySelector("#erase-btn").classList.remove("btn-toggled");
+
                 isLightening = false;
+                document.querySelector("#toggle-lightening-btn").classList.remove("btn-toggled");
+
                 isShading = false;
+                document.querySelector("#toggle-shading-btn").classList.remove("btn-toggled");
+
                 resetFigure();
             }
         );
@@ -66,11 +105,21 @@ window.addEventListener(
             "click",
             function(e){
                 isDrawing = false;
+
                 isEraseEnabling = false;
+                document.querySelector("#erase-btn").classList.remove("btn-toggled");
+
                 isRainbowEnabling = false;
+                document.querySelector("#rainbow-mode-btn").classList.remove("btn-toggled");
+
                 isColorEnabling = false;
+                document.querySelector("#color-mode-btn").classList.remove("btn-toggled");
+
                 isLightening = false;
+                document.querySelector("#toggle-lightening-btn").classList.remove("btn-toggled");
+
                 isShading = !isShading;
+                document.querySelector("#toggle-shading-btn").classList.toggle("btn-toggled");
             }
         );
 
@@ -78,11 +127,21 @@ window.addEventListener(
             "click",
             function(e){
                 isDrawing = false;
+
                 isEraseEnabling = false;
+                document.querySelector("#erase-btn").classList.remove("btn-toggled");
+
                 isRainbowEnabling = false;
+                document.querySelector("#rainbow-mode-btn").classList.remove("btn-toggled");
+
                 isColorEnabling = false;
+                document.querySelector("#color-mode-btn").classList.remove("btn-toggled");
+
                 isShading = false;
+                document.querySelector("#toggle-shading-btn").classList.remove("btn-toggled");
+
                 isLightening = !isLightening;
+                document.querySelector("#toggle-lightening-btn").classList.toggle("btn-toggled");
             }
         )
 
@@ -90,6 +149,8 @@ window.addEventListener(
             "input",
             function(e){
                 isEraseEnabling = false;
+                document.querySelector("#erase-btn").classList.remove("btn-toggled");
+
                 resetFigure();
             }
         );
@@ -200,7 +261,7 @@ function addFigureOnClickShade(){
             function(e){
                 
                 if(!node.style.backgroundColor){
-                    node.style.backgroundColor = "rgb(0, 0, 0)";
+                    node.style.backgroundColor = "rgb(255, 255, 255)";
                 }
 
                 let colorArr = node.style.backgroundColor.slice(
