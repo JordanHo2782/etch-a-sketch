@@ -21,6 +21,7 @@ main {
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
+    margin: auto 200px;
 }
 
 aside {
@@ -31,13 +32,24 @@ aside {
     align-items: center;
 }
 
-.d-none {
-    display: none;
+#color-picker {
+    visibility: hidden;
+    width: 200px;
+    height: 0px;
+    padding: 0;
+    border: 0;
 }
 
 .btn-toggled {
     background-color: black;
     color: white;
+}
+
+button:hover{
+    background-color: black;
+    color: white;
+    transform: scale(1.05);
+    transition: 0.25s;
 }
 
 #show-color-picker-btn {
@@ -54,13 +66,65 @@ button {
     padding: 10px 20px;
     border: 1px solid;
     border-radius: 5px;
+    cursor: pointer;
 }
 
 label[for='grid-size'] {
     font-size: 24px;
 }
 /*Remove default style*/
+
+#range-control-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 #grid-size {
     width: 200px;
     margin: 0;
+    cursor: pointer;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+
+footer > a:nth-child(1) {
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+    margin: 4px;
+}
+
+footer > a > img  {
+    width: 16px;
+    height: 16px;
+    margin-left: 8px;
+    cursor: pointer;
+}
+
+input[type='range'] {
+    -webkit-appearance: none;
+    background-color: white;
+}
+  
+input[type='range']::-webkit-slider-runnable-track {
+    height: 8px;
+    border: 1px solid black;
+    border-radius: 4px;
+    background: white;
+}
+  
+input[type='range']::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 8px;
+    margin-top: -4px;
+    background: black;
 }

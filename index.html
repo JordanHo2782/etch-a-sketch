@@ -12,7 +12,9 @@
         </header>
         <main>
             <aside>
-                <input class="d-none" type="color" id="color-picker" name="color-picker">
+                <div>
+                    <input type="color" id="color-picker" name="color-picker">
+                </div>
                 <button id="show-color-picker-btn"></button>
                 <button id="color-mode-btn">Color mode</button>
                 <button id="rainbow-mode-btn">Rainbow mode</button>
@@ -20,14 +22,17 @@
                 <button id="clear-btn">Clear</button>
                 <button id="toggle-shading-btn">Toggle Shading</button>
                 <button id="toggle-lightening-btn">Toggle Lightening</button>
-                <label for="grid-size"></label>
-                <input type="range" id="grid-size" value=32 name="grid-size-range-controller" min=1 max=64>
+                <div id="range-control-container">
+                    <label for="grid-size"></label>
+                    <input type="range" id="grid-size" value=32 name="grid-size-range-controller" min=1 max=64>
+                </div>
             </aside>
             <figure>
             </figure>
         </main>
         <footer>
-
+            <a href="https://github.com/JordanHo2782">Produced by Jordan Ho</a>
+            <a href="https://github.com/JordanHo2782"><img src="../images/github-mark.svg" alt="GitHub Logo"></a>
         </footer>
     </body>
 </html>
